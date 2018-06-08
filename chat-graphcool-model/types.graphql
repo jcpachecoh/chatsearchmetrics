@@ -1,0 +1,12 @@
+# The following types define the data model of the example service
+# based on which the GraphQL API is generated
+
+type Message @model {
+  id: ID! @isUnique
+  message: String
+  createdAt: DateTime! # optional system field
+  updatedAt: DateTime! # optional system field
+}
+
+
+

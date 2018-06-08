@@ -1,0 +1,3 @@
+targets:
+  test: shared-eu-west-1/cji69nwmg4yux01676gvolt9d
+  default: test
