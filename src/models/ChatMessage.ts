@@ -4,5 +4,10 @@ export class ChatMessage {
     createdAt: Date;
     updatedAt: Date;
 
-    constructor(id: string = '', messages: string = '', createdAt: Date = new Date(), updatedAt: Date = new Date);
+    constructor(id: string, message: string, createdAt: Date, updatedAt: Date) {
+        this.id = id;
+        this.message = this.message;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }

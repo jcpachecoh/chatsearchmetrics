@@ -1,14 +1,17 @@
 import * as React from 'react';
 import InputMessageContainer from '../containers/InputMessageContainer';
-import ChatContentWithData from './ChatContent';
+import ChatContentContainer from '../containers/ChatContentContainer';
+import { Grid } from 'react-bootstrap';
+import CounterContainer from '../containers/CounterContainer';
 
 export class MainLayout extends React.Component<{}, {}> {
     public render() {
         return (
-            <div className="main-layout">
-                <ChatContentWithData />
+            <Grid>
+                <CounterContainer />
+                <ChatContentContainer />
                 <InputMessageContainer />
-            </div>
+            </Grid>
         );
     }
 }

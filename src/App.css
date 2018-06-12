@@ -26,3 +26,39 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.chat-content {
+  height: 300px;
+  overflow: scroll;
+}
+.chat-content .message {
+  text-align: justify;
+}
+
+.chat-content .message img{
+  text-align: center;
+  display: inline;
+}
+.chat-content .message-container {
+    position: relative;
+    background: #00aabb;
+    border-radius: .4em;
+    display: inline;
+    padding: 20px 10px;
+    margin: 30px 30px;
+}
+
+.chat-content .message-container::after {
+  content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #00aabb;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}

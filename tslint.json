@@ -56,7 +56,7 @@
 
       "trailing-comma": [false],
       "typedef": [
-          true,
+          false,
           "parameter",
           "property-declaration"
       ],

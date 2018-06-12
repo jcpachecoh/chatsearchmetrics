@@ -1,18 +1,22 @@
 import { connect, Dispatch } from 'react-redux';
 import { InputMessageProps, InputMessage } from '../components/InputMessage';
-import { addMessage, ChatActions } from '../actions/index';
+import { ChatActions, handleMessage, addMessage } from '../actions/index';
 
-export type ConnectedStateProps = Pick<InputMessageProps, 'message'>;
+export type ConnectedStateProps = Pick<InputMessageProps, 'message' | 'errorMessage'>;
 
-export function mapStateToProps({ chatReducer: { message } }: any): ConnectedStateProps {
+export function mapStateToProps({ chatReducer: { message, errorMessage } }: any): ConnectedStateProps {
     return {
-        message
+        message,
+        errorMessage
     };
 }
 
-export type ConnectedDispatchProps = Pick<InputMessageProps, 'addMessage'>;
+export type ConnectedDispatchProps = Pick<InputMessageProps, 'handleMessage' | 'addMessage'>;
 export function mapDispatchToProps(dispatch: Dispatch<ChatActions>): ConnectedDispatchProps {
-    return { addMessage: (message: string) => dispatch(addMessage(message)) };
+    return {
+        handleMessage: (message: string) => dispatch(handleMessage(message)),
+        addMessage: (message: string) => dispatch(addMessage(message))
+    };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(InputMessage);
